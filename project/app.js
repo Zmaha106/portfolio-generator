@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const fs =require('fs');
+=======
+const fs = require('fs');
+>>>>>>> 5cefa30abad34c5aee3491d6808a268cbf9b2f19
 const inquirer = require('inquirer');
 const generatePage = require('./src/page-template');
 
@@ -131,11 +135,16 @@ promptUser()
   .then(portfolioData => {
     const pageHTML = generatePage(portfolioData);
 
+    fs.writeFile('./index.html', pageHTML, err => {
+      if (err) throw new Error(err);
 
+<<<<<<< HEAD
 // change the path to look like this
 fs.writeFile('./dist/index.html', pageHTML, err => {
       if (err) throw new Error(err);
 
+=======
+>>>>>>> 5cefa30abad34c5aee3491d6808a268cbf9b2f19
       console.log('Page created! Check out index.html in this directory to see it!');
     });
   });
